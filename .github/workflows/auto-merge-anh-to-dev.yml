@@ -20,3 +20,9 @@ jobs:
           git checkout dev
           git merge anh --no-ff --no-edit
           git push origin dev
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "Auto Merge anh into dev"
+          body: "Automatically merged 'anh' into 'dev'."
