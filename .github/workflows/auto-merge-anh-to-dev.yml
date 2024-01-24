@@ -16,7 +16,7 @@ jobs:
       - name: Merge anh into dev
         run: |
           git config --global user.email "anh26122002thml@gmail.com"
-          git config --global user.name "anh"
+          git config --global user.name "Pearl2612"
           git checkout dev
           git merge anh --no-ff --no-edit
           git push origin dev
