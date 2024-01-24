@@ -15,3 +15,5 @@ npm i compression
 node --watch .\server.js
 //cai goi env
 npm install dotenv
+//tao model nhanh
+!dmbg
