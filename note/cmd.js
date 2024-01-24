@@ -13,3 +13,5 @@ curl http://localhost:3055 --include
 npm i compression
 //goi trang web
 node --watch .\server.js
+//cai goi env
+npm install dotenv
