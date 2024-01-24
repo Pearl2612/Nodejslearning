@@ -11,3 +11,5 @@ npm i helmet--save-dev
 curl http://localhost:3055 --include
 //giam dung luong req den server
 npm i compression
+//goi trang web
+node --watch .\server.js
