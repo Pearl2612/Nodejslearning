@@ -1,31 +1,31 @@
-name: Auto Merge
+# name: Auto Merge
 
-on:
-  push:
-    branches:
-      - anh
+# on:
+#   push:
+#     branches:
+#       - anh
 
-jobs:
-  merge:
-    runs-on: ubuntu-latest
+# jobs:
+#   merge:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Create or Checkout dev branch
-        run: |
-          git checkout dev || git checkout -b dev
+#       - name: Create or Checkout dev branch
+#         run: |
+#           git checkout dev || git checkout -b dev
 
-      - name: Merge anh into dev
-        run: |
-          git config --global user.email "anh26122002thml@gmail.com"
-          git config --global user.name "Pearl2612"
-          git merge anh --no-ff --no-edit
-          git push origin dev
+#       - name: Merge anh into dev
+#         run: |
+#           git config --global user.email "anh26122002thml@gmail.com"
+#           git config --global user.name "Pearl2612"
+#           git merge anh --no-ff --no-edit
+#           git push origin dev
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: "Auto Merge anh into dev"
-          body: "Automatically merged 'anh' into 'dev'."
+#       - name: Create Pull Request
+#         uses: peter-evans/create-pull-request@v3
+#         with:
+#           title: "Auto Merge anh into dev"
+#           body: "Automatically merged 'anh' into 'dev'."
