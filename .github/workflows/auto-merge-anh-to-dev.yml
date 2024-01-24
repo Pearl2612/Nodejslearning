@@ -1,0 +1,22 @@
+name: Auto Merge
+
+on:
+  push:
+    branches:
+      - anh
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Merge anh into dev
+        run: |
+          git config --global user.email "anh26122002thml@gmail.com"
+          git config --global user.name "anh"
+          git checkout dev
+          git merge anh --no-ff --no-edit
+          git push origin dev
