@@ -1,7 +1,7 @@
 'use strict'
 
 const mongoose = require('mongoose');
-const { db: {host, port, name} } = require('../configs/configs.mongodb.js');
+const { db: {host, port, name} } = require('../configs/congif.mongdb');
 const connectString = `mongodb://${host}:${port}/${name}`;
 
 const { countConnect } = require('../helpers/check.connect');
@@ -34,4 +34,4 @@ class Database {
 }
 
 const instanceMongoose = Database.getInstance();
-mongoose.exports = instanceMongoose
+module.exports = instanceMongoose;

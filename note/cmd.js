@@ -17,3 +17,7 @@ node --watch .\server.js
 npm install dotenv
 //tao model nhanh
 !dmbg
+//hash mat khau
+npm i bcrypt --save
+//
+npm i crypto --save
