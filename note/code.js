@@ -7,4 +7,6 @@ app.use(morgan("dev"));
 app.use(helmet());
 //giam dung luong req den server
 app.use(compression());
+//optimize code return object js thuan
+learn()
 

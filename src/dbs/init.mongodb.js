@@ -1,20 +1,20 @@
-'use strict'
+"use strict"
 
-const mongoose = require('mongoose');
-const { db: {host, port, name} } = require('../configs/configs.mongodb.js');
+const mongoose = require("mongoose");
+const { db: {host, port, name} } = require("../configs/congif.mongdb");
 const connectString = `mongodb://${host}:${port}/${name}`;
 
-const { countConnect } = require('../helpers/check.connect');
+const { countConnect } = require("../helpers/check.connect");
 
 class Database {
 	constructor() {
 		this.connect();
 	}
 	//connect
-	connect(type = 'mongodb') {
+	connect(type = "mongodb") {
 		if( 1 === 1 ) {
-			mongoose.set('debug', true);
-			mongoose.set('debug', {color: true});
+			mongoose.set("debug", true);
+			mongoose.set("debug", {color: true});
 		}
 
 		mongoose.connect( connectString, {
@@ -34,4 +34,4 @@ class Database {
 }
 
 const instanceMongoose = Database.getInstance();
-mongoose.exports = instanceMongoose
+module.exports = instanceMongoose;

@@ -15,3 +15,18 @@ npm i compression
 node --watch .\server.js
 //cai goi env
 npm install dotenv
+//tao model nhanh
+!dmbg
+//hash mat khau
+npm i bcrypt --save
+//
+npm i crypto --save
+//dung de hien thi du lieu gon hon
+npm i lodash --save
+
+
+//cmd mongoose
+//switched to db shopDEV
+use shopDEV
+//lay ra keys
+db.keys.find()

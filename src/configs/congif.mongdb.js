@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 //lv 0
 // const config = {
@@ -6,9 +6,9 @@
 // 		port: 3000
 // 	},
 // 	db: {
-// 		host: 'localhost',
+// 		host: "localhost",
 // 		port: 27017,
-// 		name: 'shopDEV',
+// 		name: "shopDEV",
 // 	}
 // }
 // module.exports = config;
@@ -19,9 +19,9 @@ const dev = {
         port: process.env.DEV_APP_PORT || 3052,
     },
     db: {
-        host: process.env.DEV_DB_HOST || 'localhost',
+        host: process.env.DEV_DB_HOST || "localhost",
         port: process.env.DEV_DB_PORT || 27017,
-        name: process.env.DEV_DB_NAME || 'shopDEV',
+        name: process.env.DEV_DB_NAME || "shopDEV",
     },
 };
 
@@ -30,9 +30,9 @@ const pro = {
         port: process.env.PRO_APP_PORT || 3000,
     },
     db: {
-        host: process.env.PRO_DB_HOST || 'localhost',
+        host: process.env.PRO_DB_HOST || "localhost",
         port: process.env.PRO_DB_PORT || 27017,
-        name: process.env.PRO_DB_NAME || 'shopPRO',
+        name: process.env.PRO_DB_NAME || "shopPRO",
     },
 };
 
