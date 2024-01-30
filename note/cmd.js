@@ -21,3 +21,12 @@ npm install dotenv
 npm i bcrypt --save
 //
 npm i crypto --save
+//dung de hien thi du lieu gon hon
+npm i lodash --save
+
+
+//cmd mongoose
+//switched to db shopDEV
+use shopDEV
+//lay ra keys
+db.keys.find()
