@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const mongoose = require("mongoose"); // Erase if already required
 const { model, Schema } = require("mongoose");
@@ -17,7 +17,16 @@ var keyTokenSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        privateKey: {
+            type: String,
+            required: true,
+        },
         refreshToken: {
+            type: String,
+            required: true,
+        },
+        refreshTokenUsed: {
+            //RT da duoc su dung
             type: Array,
             default: [],
         },
@@ -30,4 +39,3 @@ var keyTokenSchema = new mongoose.Schema(
 
 //Export the model
 module.exports = model(DOCUMENT_NAME, keyTokenSchema);
-
