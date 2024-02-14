@@ -2,10 +2,10 @@
 ### Sign Up
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: 1f0b05698f8c3f92d774d3185ba85c24aaa9f6754a57832c07b54a008118dbf28f0f0cf5358c20c29a3222fe7ca197d3171cc634b7de8929bb48dbdea0bfe489
+x-api-key: 294fcb88da3b4b4caab7d81ec6e8f73595c73849c4be612f333a260faa57d7b539277d733850c5cfd9a54e74bc13f244dff1bd0d34cf55d32aed3b31fc8472d1
 
 {
     "name": "Shop1",
-    "email": "anhdev4@gmail.com",
+    "email": "anhdev5@gmail.com",
     "password": "123456"
 }

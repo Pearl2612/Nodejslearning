@@ -6,7 +6,11 @@ const crypto = require("crypto");
 const KeyTokenService = require("./keyToken.service");
 const { createTokenPair } = require("../auth/authUtils");
 const { getIntoData } = require("../utils");
-const { BadRequestError, ConflictRequest, AuthFailureError } = require("../core/error.response");
+const {
+    BadRequestError,
+    ConflictRequest,
+    AuthFailureError,
+} = require("../core/error.response");
 /// service ///
 const { findByEmail } = require("./shop.service");
 const RoleShop = {
@@ -34,8 +38,20 @@ class AccessService {
 
         //3
         // created privateKey, publicKey
-        const privateKey = crypto.randomBytes(64).toString("hex");
-        const publicKey = crypto.randomBytes(64).toString("hex");
+        const { privateKey, publicKey } = crypto.generateKeyPairSync(
+            "rsa",
+            {
+                modulusLength: 4096,
+                publicKeyEncoding: {
+                    type: "pkcs1", //public key cryptogenerateKeyPairSync tra ve dang string
+                    format: "pem",
+                },
+                privateKeyEncoding: {
+                    type: "pkcs1", //public key cryptogenerateKeyPairSync tra ve dang string
+                    format: "pem",
+                },
+            }
+        );
 
         //4. Generate token
         const { _id: userId } = foundShop;
@@ -93,7 +109,6 @@ class AccessService {
                     },
                 }
             );
-            console.log(publicKey, privateKey); //save collenction key
             const publicKeyString = await KeyTokenService.createKeyToken({
                 userId: newShop._id,
                 publicKey,
@@ -111,7 +126,6 @@ class AccessService {
                 publicKeyString,
                 privateKey
             );
-            console.log(`Created Token Success:: `, tokens);
 
             return {
                 code: 201,
