@@ -6,7 +6,7 @@ const crypto = require("crypto");
 const KeyTokenService = require("./keyToken.service");
 const { createTokenPair } = require("../auth/authUtils");
 const { getIntoData } = require("../utils");
-const { BadRequestError, ConflictRequest } = require("../core/error.response");
+const { BadRequestError, ConflictRequest, AuthFailureError } = require("../core/error.response");
 /// service ///
 const { findByEmail } = require("./shop.service");
 const RoleShop = {
@@ -34,8 +34,8 @@ class AccessService {
 
         //3
         // created privateKey, publicKey
-        const publicKey = crypto.randomBytes(64).toString("hex");
         const privateKey = crypto.randomBytes(64).toString("hex");
+        const publicKey = crypto.randomBytes(64).toString("hex");
 
         //4. Generate token
         const { _id: userId } = foundShop;
@@ -46,10 +46,10 @@ class AccessService {
         );
 
         await KeyTokenService.createKeyToken({
-            refreshToken: tokens.refreshToken,
-            privateKey,
-            publicKey,
             userId,
+            publicKey,
+            privateKey,
+            refreshToken: tokens.refreshToken,
         });
         return {
             shop: getIntoData({

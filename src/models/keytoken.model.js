@@ -13,11 +13,11 @@ var keyTokenSchema = new mongoose.Schema(
             required: true,
             ref: "Shop",
         },
-        publicKey: {
+        privateKey: {
             type: String,
             required: true,
         },
-        privateKey: {
+        publicKey: {
             type: String,
             required: true,
         },
