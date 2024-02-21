@@ -1,6 +1,8 @@
 "use strict";
-
-const { filter } = require("lodash");
+const mongoose = require("mongoose"); // Erase if already required
+const {
+    Types: { ObjectId },
+} = require("mongoose");
 const keytokenModel = require("../models/keytoken.model");
 
 class KeyTokenService {
@@ -42,6 +44,16 @@ class KeyTokenService {
         } catch (error) {
             return error;
         }
+    };
+
+    static findByUserId = async (userId) => {
+        return await keytokenModel
+            .findOne({ user: new ObjectId(userId) })
+            .lean();
+    };
+
+    static removeKeyById = async (id) => {
+        return await keytokenModel.deleteOne({ _id: new ObjectId(id) });
     };
 }
 
